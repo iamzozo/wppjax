@@ -12,8 +12,8 @@
 class WP_Pjax
 {
 
-    private static $wp_pjax_path;
-    private static $wp_pjax_path_uri;
+    private $wp_pjax_path;
+    private $wp_pjax_path_uri;
 
     public function __construct()
     {
