@@ -24,6 +24,9 @@ class WP_Pjax
         // WP Hooks
         add_filter('template_include', array($this, 'filter_content'));
         add_action('wp_enqueue_scripts', array($this, 'register_scripts'));
+        if (isset($_SERVER['HTTP_X_PJAX']) && strtolower($_SERVER['HTTP_X_PJAX']) == 'true') {
+            add_action('send_headers', array(&$this, 'add_header_xua'));
+        }
     }
 
     public function register_scripts()
@@ -48,6 +51,11 @@ class WP_Pjax
         } else {
             return $template;
         }
+    }
+
+    public function add_header_xua()
+    {
+        header('X-PJAX-URL:' . $_SERVER['REQUEST_URI']);
     }
 }
 
