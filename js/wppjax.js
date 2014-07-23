@@ -6,7 +6,7 @@ jQuery(function () {
 
     jQuery(document).on('submit', 'form[data-pjax]', function (event) {
         var container = jQuery(this).data('pjax')
-        jQuery.pjax.submit(event, '.messages')
+        jQuery.pjax.submit(event, container)
     })
 
 })
