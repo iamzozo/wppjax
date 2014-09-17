@@ -1,4 +1,4 @@
-#Wordpress with pjax
+#Wordpress with pjax (plugin)
 
 **Usage:**
 - Install and activate the plugin as usual
